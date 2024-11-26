@@ -47,6 +47,22 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(String title) {
         this.title = title;
         assignId(); // Assign a unique ID
+    }
+
+    // Method to assign a unique ID to the DVD
+    private void assignId() {
+        nbDigitalVideoDiscs++; // Increment the static counter
+        this.id = nbDigitalVideoDiscs; // Assign the current count as the ID
+    }
+
+    // Getter for ID
+    public int getId() {
+        return id;
+    }
+
+    // Getters and Setters
+    public String getTitle() {
+        return title;
       
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
@@ -67,6 +83,7 @@ public class DigitalVideoDisc {
         this.title = title;
         this.category = category;
         this.cost = cost;
+
     }
 
     public DigitalVideoDisc(String title) {
@@ -117,7 +134,31 @@ public int getLength() {
 
     public void setCategory(String category) {
         this.category = category;
+
     }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setCost(double cost) {
+        this.cost = (float) cost;
+    }
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + " $";
+    }
+
+    // isMatch method to match titles
+    public boolean isMatch(String title) {
+        // So sánh tiêu đề (không phân biệt hoa thường)
+        return this.title.toLowerCase().contains(title.toLowerCase());
+
+    }
+}
 
     public void setDirector(String director) {
         this.director = director;
