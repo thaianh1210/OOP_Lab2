@@ -2,17 +2,7 @@ public class DigitalVideoDisc {
     // Class attribute (biến thành viên lớp) (Lab03 Bài 5)
     private static int nbDigitalVideoDiscs = 0;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> feature/search-cart
-=======
->>>>>>> master
-=======
->>>>>>> topic/store
+
     // Instance attributes (biến thành viên đối tượng)
     private String title;
     private String category;
@@ -22,33 +12,14 @@ public class DigitalVideoDisc {
     private int id; // Instance attribute to hold unique ID
 
     // Constructor method
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> topic/class-member
-=======
->>>>>>> feature/search-cart
-=======
->>>>>>> master
-=======
->>>>>>> topic/store
+
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
         this.director = director;
         this.length = length;
         this.cost = cost;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> feature/search-cart
-=======
->>>>>>> master
-=======
->>>>>>> topic/store
+
         assignId(); // Assign a unique ID
     }
 
@@ -70,7 +41,7 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(String title) {
         this.title = title;
         assignId(); // Assign a unique ID
-<<<<<<< HEAD
+
       
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
@@ -98,10 +69,9 @@ public class DigitalVideoDisc {
       
     }
 
-=======
+
     }
 
->>>>>>> topic/store
     // Method to assign a unique ID to the DVD
     private void assignId() {
         nbDigitalVideoDiscs++; // Increment the static counter
@@ -116,9 +86,7 @@ public class DigitalVideoDisc {
     // Getters and Setters
     public String getTitle() {
         return title;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> topic/class-member
+
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
@@ -135,7 +103,7 @@ public class DigitalVideoDisc {
     }
 
     public DigitalVideoDisc(String title) {
-=======
+
     }
 
     public String getCategory() {
@@ -155,10 +123,7 @@ public class DigitalVideoDisc {
     }
 
     public void setTitle(String title) {
-<<<<<<< HEAD
->>>>>>> feature/search-cart
-=======
->>>>>>> topic/store
+
         this.title = title;
     }
 
@@ -186,14 +151,7 @@ public class DigitalVideoDisc {
         // So sánh tiêu đề (không phân biệt hoa thường)
         return this.title.toLowerCase().contains(title.toLowerCase());
     }
-<<<<<<< HEAD
-}
 
-
-=======
-    }
-
->>>>>>> master
 public String getTitle() {
     return title;
 }
@@ -234,6 +192,5 @@ public int getLength() {
     public void setCost(double cost) {
         this.cost = (float) cost;
     }
-=======
->>>>>>> topic/store
+
 }
