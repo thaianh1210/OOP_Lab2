@@ -68,6 +68,9 @@ public class Cart {
         }
         return total;
     }
+<<<<<<< HEAD
+    
+=======
     public void printCart() {
         System.out.println("***********************CART***********************");
         System.out.println("Ordered Items:");
@@ -87,5 +90,10 @@ public class Cart {
         System.out.println("Total cost: " + totalCost + " $");
         System.out.println("***************************************************");
     }
+>>>>>>> feature/print-cart
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
