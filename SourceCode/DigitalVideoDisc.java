@@ -1,12 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Admin
- */
 public class DigitalVideoDisc {
     // Class attribute (biến thành viên lớp) (Lab03 Bài 5)
     private static int nbDigitalVideoDiscs = 0;
@@ -18,6 +9,7 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
     private int id; // Instance attribute to hold unique ID
+
 
     // Constructor method
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
@@ -33,9 +25,34 @@ public class DigitalVideoDisc {
         this.title = title;
         this.category = category;
         this.director = director;
+
+
+    // Constructor method
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+
         this.cost = cost;
         assignId(); // Assign a unique ID
     }
+
+
+    public DigitalVideoDisc(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+
+    public DigitalVideoDisc(String title, String category, String director, float cost) {
+        this.title = title;
+        this.category = category;
+        this.director = director;
+
+        this.cost = cost;
+        assignId(); // Assign a unique ID
+    }
+
+
 
     public DigitalVideoDisc(String title, String category, float cost) {
         this.title = title;
@@ -43,6 +60,7 @@ public class DigitalVideoDisc {
         this.cost = cost;
         assignId(); // Assign a unique ID
     }
+
 
     public DigitalVideoDisc(String title) {
         this.title = title;
@@ -55,10 +73,19 @@ public class DigitalVideoDisc {
         this.id = nbDigitalVideoDiscs; // Assign the current count as the ID
     }
 
+
     // Getter for ID
     public int getId() {
         return id;
     }
+
+
+
+    // Getter for ID
+    public int getId() {
+        return id;
+    }
+
 
     // Getters and Setters
     public String getTitle() {
@@ -134,16 +161,24 @@ public int getLength() {
 
     public void setCategory(String category) {
         this.category = category;
-
+r
     }
 
     public void setDirector(String director) {
         this.director = director;
     }
 
+
     public void setLength(int length) {
         this.length = length;
     }
+
+
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
 
     public void setCost(double cost) {
         this.cost = (float) cost;
@@ -157,6 +192,7 @@ public int getLength() {
         // So sánh tiêu đề (không phân biệt hoa thường)
         return this.title.toLowerCase().contains(title.toLowerCase());
 
+
     }
 }
 
@@ -169,6 +205,6 @@ public int getLength() {
     }
 
     public void setCost(double cost) {
-        this.cost = (float) cost;
+
     }
 }
