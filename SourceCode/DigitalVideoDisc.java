@@ -13,9 +13,12 @@ public class DigitalVideoDisc {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> feature/search-cart
+=======
+>>>>>>> master
     // Instance attributes (biến thành viên đối tượng)
     private String title;
     private String category;
@@ -26,9 +29,12 @@ public class DigitalVideoDisc {
 
     // Constructor method
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> topic/class-member
 =======
 >>>>>>> feature/search-cart
+=======
+>>>>>>> master
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
@@ -37,9 +43,12 @@ public class DigitalVideoDisc {
         this.cost = cost;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> feature/search-cart
+=======
+>>>>>>> master
         assignId(); // Assign a unique ID
     }
 
@@ -61,6 +70,31 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(String title) {
         this.title = title;
         assignId(); // Assign a unique ID
+      
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
+    }
+
+    public DigitalVideoDisc(String title, String category, String director, float cost) {
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.cost = cost;
+    }
+
+    public DigitalVideoDisc(String title, String category, float cost) {
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public DigitalVideoDisc(String title) {
+        this.title = title;
+      
     }
 
     // Method to assign a unique ID to the DVD
@@ -77,6 +111,7 @@ public class DigitalVideoDisc {
     // Getters and Setters
     public String getTitle() {
         return title;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> topic/class-member
     }
@@ -146,9 +181,14 @@ public class DigitalVideoDisc {
 }
 
 
+=======
+    }
+
+>>>>>>> master
 public String getTitle() {
     return title;
 }
+
 
 public String getCategory() {
     return category;
