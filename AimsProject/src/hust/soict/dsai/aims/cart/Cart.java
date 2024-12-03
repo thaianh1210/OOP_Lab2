@@ -35,7 +35,7 @@ public class Cart {
         return total;
     }
 
-    public void searchbyId(int id) {
+    public void searchById(int id) {
         if(id < 0 || id >= itemsOrdered.size()) {
             System.out.println("Id " + id + " is not in the cart");
             return;

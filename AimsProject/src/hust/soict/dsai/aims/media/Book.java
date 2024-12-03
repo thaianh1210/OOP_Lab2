@@ -13,9 +13,11 @@ public class Book extends Media {
         super(id, title, category, cost);
     }
     public List<String> getAuthors(){
+
         return authors;
     }
     public void setAuthors(List<String> authors){
+
         this.authors = authors;
     }
     public void addAuthor(String authorName){
@@ -35,7 +37,11 @@ public class Book extends Media {
     }
     @Override
     public String toString() {
-        return "Book - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getCost() + " - " + this.getAuthors();
+        return String.format("Book - %s - %s - %s - %s",
+                this.getTitle(),
+                this.getCategory(),
+                this.getCost(),
+                this.getAuthors());
     }
 }
 

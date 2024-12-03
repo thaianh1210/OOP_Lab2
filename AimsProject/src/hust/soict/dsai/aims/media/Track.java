@@ -1,16 +1,17 @@
 package hust.soict.dsai.aims.media;
 
-public class Track {
+public class Track implements Playable {
     private String title;
-    private float length;
+    private int length;
 
-    public float getLength(){
+    public int getLength(){
+
         return length;
     }
     public String getTitle(){
         return title;
     }
-    public Track(String title float length){
+    public Track(String title, int length){
         this.title = title;
         this.length = length;
     }
@@ -25,4 +26,5 @@ public class Track {
         Track track = (Track) obj;
         return title.equals(track.title) && length == track.length;
     }
+
 }

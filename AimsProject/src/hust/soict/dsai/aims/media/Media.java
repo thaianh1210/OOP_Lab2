@@ -28,27 +28,35 @@ public abstract class Media {
         this.setCost(cost);
     }
     public int getId(){
+
         return id;
     }
     public void setId(int id){
+
         this.id = id;
     }
     public String getTitle(){
+
         return title;
     }
     public void setTitle(String title){
+
         this.title = title;
     }
     public String getCategory(){
+
         return category;
     }
     public void setCategory(String category){
+
         this.category = category;
     }
     public float getCost(){
+
         return cost;
     }
     public void setCost(float cost){
+
         this.cost = cost;
     }
 
@@ -56,7 +64,11 @@ public abstract class Media {
         return this.getTitle().equals(obj.getTitle());
     }
     @Override
-    public String toString(){
-        return "Media - " + this.getTitle() + " - " + this.getCategory() +  " - " + this.getCost();
+    public String toString() {
+        return String.format("Media - %s - %s - %s",
+                this.getTitle(),
+                this.getCategory(),
+                this.getCost());
     }
+
 }

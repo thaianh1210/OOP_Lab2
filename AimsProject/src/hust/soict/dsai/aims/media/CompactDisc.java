@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class CompactDisc extends Disc {
     private String artist;
     private ArrayList<Track> tracks;
+
     public CompactDisc(int id, String title, String category, float cost,
                        String artist, ArrayList<Track> tracks) {
         super(id, title, category, cost);
@@ -37,8 +38,28 @@ public class CompactDisc extends Disc {
     }
     @Override
     public String toString() {
-        return "CD - " + this.getTitle() + " - " + this.getCategory()
-                + " - " + this.getCost() + " - " + this.getDirector()
-                + " - " +  this.getLength() + " - " + this.getArtist();
+        return String.format("CD - %s - %s - %s - %s - %s - %s",
+                this.getTitle(),
+                this.getCategory(),
+                this.getCost(),
+                this.getDirector(),
+                this.getLength(),
+                this.getArtist());
     }
+
+    public void play() {
+        System.out.println("\nTitle: " + getTitle() + "\nArtist: " + getArtist());
+        for (Track track : tracks) {
+            track.play();
+        }
+    }
+    @Override
+    public int getLength() {
+        int totalLength = 0;
+        for (Track track : tracks) {
+            totalLength += track.getLength();
+        }
+        return totalLength;
+    }
+
 }
