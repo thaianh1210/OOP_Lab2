@@ -1,14 +1,20 @@
+
 package hust.soict.dsai.aims.store;
 
 import java.util.ArrayList;
 import hust.soict.dsai.aims.media.*;
+import hust.soict.dsai.aims.media.Media;
+import hust.soict.dsai.aims.cart.Cart;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Store {
-    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+    private ObservableList<Media> itemsInStore = FXCollections.observableArrayList();
+    private Cart cart = new Cart();
 
-    private boolean checkMedia(Media disc) {
+    private boolean checkMedia(Media media) {
         for (Media item : itemsInStore) {
-            if (item.equals(disc)) {
+            if (item.equals(media)) {
                 return true;
             }
         }
@@ -24,27 +30,44 @@ public class Store {
         return null;
     }
 
-    public ArrayList<Media> getItemsInStore() {
+    public void addMedia(Media media) {
+        if (checkMedia(media)) {
+            System.out.println("The media " + media.getTitle() + " is already in store!");
+        } else {
+            itemsInStore.add(media);
+            System.out.println("The media " + media.getTitle() + " has been added!");
+        }
+    }
+
+    public void removeMedia(Media media) {
+        if (itemsInStore.remove(media)) {
+            System.out.println("The media " + media.getTitle() + " has been removed!");
+        } else {
+            System.out.println("Could not find " + media.getTitle() + " in store!");
+        }
+    }
+
+    public void addToCart(Media media) {
+        if (cart.findMedia(media.getTitle())==null) {
+            cart.addMedia(media);
+            System.out.println(media.getTitle() + " has been added to the cart.");
+        } else {
+            System.out.println(media.getTitle() + " is already in the cart.");
+        }
+    }
+
+    public void viewCart() {
+        System.out.println("\n**********CART**********");
+        if (cart.isEmpty()) {
+            System.out.println("Cart is empty.");
+        } else {
+            cart.printCart();
+        }
+        System.out.println("************************");
+    }
+    public ObservableList<Media> getItemsInStore() {
         return itemsInStore;
     }
-
-    public void addMedia(Media disc) {
-        if (checkMedia(disc)) {
-            System.out.println("The disc " + disc.getTitle() + " is already in store!");
-        } else {
-            itemsInStore.add(disc);
-            System.out.println("The disc " + disc.getTitle() + " has been added!");
-        }
-    }
-
-    public void removeMedia(Media disc) {
-        if (itemsInStore.remove(disc)) {
-            System.out.println("The disc " + disc.getTitle() + " has been removed!");
-        } else {
-            System.out.println("Could not find " + disc.getTitle() + " in store!");
-        }
-    }
-
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder("\n**********STORE**********\nItems in the store:\n");

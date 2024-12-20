@@ -70,5 +70,31 @@ public abstract class Media {
                 this.getCategory(),
                 this.getCost());
     }
-
+    public int compareTo(Media obj) throws NullPointerException {
+        try {
+            for (int i = 0; i < this.title.length() && i < obj.getTitle().length(); i++) {
+                if ((int) this.title.charAt(i) == (int) obj.getTitle().charAt(i)) {
+                    continue;
+                } else {
+                    return ((int) this.title.charAt(i) - (int) obj.getTitle().charAt(i));
+                }
+            }
+            if (!(this.title.length() == obj.getTitle().length())) {
+                return (this.title.length() - obj.getTitle().length());
+            }
+            for (int i = 0; i < this.category.length() && i < obj.getCategory().length(); i++) {
+                if ((int) this.category.charAt(i) == (int) obj.getCategory().charAt(i)) {
+                    continue;
+                } else {
+                    return ((int) this.category.charAt(i) - (int) obj.getTitle().charAt(i));
+                }
+            }
+            if (!(this.category.length() == obj.getCategory().length())) {
+                return (this.category.length() - obj.getCategory().length());
+            }
+            return 0;
+        } catch (NullPointerException e) {
+            throw e;
+        }
+    }
 }

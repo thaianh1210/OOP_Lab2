@@ -2,14 +2,17 @@ package hust.soict.dsai.aims.cart;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
+import javafx.collections.ObservableList;
+import javafx.collections.FXCollections;
+
 import java.lang.module.ModuleDescriptor;
 import java.util.*;
 
 public class Cart {
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
     public void addMedia(Media item) {
-        if(!itemsOrdered.contains(item)) {
+        if(itemsOrdered.contains(item)) {
             System.out.println(item.getTitle() + "is already in the cart");
         } else{
             itemsOrdered.add(item);
@@ -81,6 +84,28 @@ public class Cart {
     }
     public void sortByCostTitle(){
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+    public ObservableList<Media> getItemsOrdered() {
+        return this.itemsOrdered;
+    }
+    public float calculateTotalCost() {
+        float totalCost = 0.0f;
+        for (Media media : itemsOrdered) {
+            totalCost += media.getCost();
+        }
+        return totalCost;
+    }
+    public void empty() {
+        this.itemsOrdered.clear();
+    }
+    public boolean isEmpty(){
+        return itemsOrdered.size() == 0;
+    }
+
+    public void printCart(){
+        for (Media media : itemsOrdered){
+            System.out.println(media.toString());
+        }
     }
 }
 
